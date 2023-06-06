@@ -1,0 +1,71 @@
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+  <label class="lab" for="name">Name: </label>
+  <input type="text" id="input" name="name" placeholder="Enter your Name." formControlName="name" required>
+  <br><br>
+  <label class="lab" for="phone">Phone: </label>
+  <input type="tel" id="input" name="phone" pattern="[0-9]{10}" placeholder="Enter your phone number."
+    formControlName="number" required>
+  <br><br>
+  <label class="lab" for="name">E-Mail: </label>
+  <input type="email" id="input" name="mail" placeholder="Enter your mail address." formControlName="mail" required>
+  <br><br>
+  <div class="response-style">
+    <label for="gender">Gender: </label>
+    <br>
+    <input type="radio" id="male" name="gender" value="Male" formControlName="gender" required>
+    <label for="Male"> Male </label>
+    <input type="radio" id="female" name="gender" value="Female" formControlName="gender" required>
+    <label for="Female"> Female </label>
+    <br><br>
+    <label for="Category">Category: </label><br>
+    <select name="Category" id="Category" formControlName="category">
+      <option value="">Select your Category</option>
+      <option value="General">General</option>
+      <option value="OBC">OBC</option>
+      <option value="SC">SC</option>
+      <option value="ST">ST</option>
+    </select>
+    <br><br>
+  </div>
+  <div class="response-style">
+    <label for="tech">Technologies: </label><br>
+    <input type="checkbox" id="tech" name="tech" value="tech" formControlName="technology">
+    <label for="tech"> C/C++ </label><br>
+    <input type="checkbox" id="tech" name="tech" value="tech" formControlName="technology">
+    <label for="tech"> JAVA </label><br>
+    <input type="checkbox" id="tech" name="tech" value="tech" formControlName="technology">
+    <label for="tech"> Python </label><br>
+    <input type="checkbox" id="tech" name="tech" value="tech" formControlName="technology">
+    <label for="tech"> JavaScript </label><br>
+  </div><br>
+  <label class="lab">Profile Photo:</label>
+  <input type="file" (change)="selectFile($event)">
+  <br><br>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+    Preview
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Name: {{userForm.value.name}}</p>
+          <p>Phone: {{userForm.value.number}}</p>
+          <p>EMail: {{userForm.value.mail}}</p>
+          <p>Gender: {{userForm.value.gender}}</p>
+          <p>Category: {{userForm.value.category}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
