@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Preview</h4>
+  <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Name: {{name.name}}</p>
+  <p>Phone Number: {{name.number}}</p>
+  <p>E-mail Address: {{name.mail}}</p>
+  <p>Gender: {{name.gender}}</p>
+  <p>Category: {{name.category}}</p>
+  <p>Image: <img src="{{this.url}}" style="height: 150px; width:150px"></p>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-outline-dark"> <a class="nav-link" routerLink="admin/view" (click)="createUser()">Save Data</a>
+  </button>
+</div>

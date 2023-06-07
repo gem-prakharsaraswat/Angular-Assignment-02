@@ -7,13 +7,13 @@ import { FormdataService } from '../../services/formdata.service'
   styleUrls: ['./view-users.component.css']
 })
 export class ViewUsersComponent {
-  userdata:any
+  userdata:any={};
+  
   constructor(private Data: FormdataService) {
     if(this.Data.userdata!==undefined){
     this.userdata=this.Data.userdata;
     console.log(this.userdata);
     console.log(this.userdata.name);
     }
-
 }
 }
